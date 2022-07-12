@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+/*
+0 - 600px: 				Phone
+600px - 900px: 		Tablet Portrait
+900px - 1200px: 	Tablet Landscape
+[1200px - 1800px] is where our normal styles apply Desktop
+1800px + : 				Big Desktop
+
+
+$breakpoint argument choices:
+* - phone-small == 432px = 27em 
+* - phone == 544px = 34em
+* - tab-small == 704px = 44em
+* - tab-port == 940px = 59em
+* - tab-land == 1200px = 75em
+* - small-desktop == 1360px = 85em
+* - big-desktop == 1360px <
+
+ORDER : Base + Typography > General Layout + grid > page layout > components
+*/
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.container {
+  width: 130rem;
+  padding: 9.6rem;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  width: 135rem;
+  padding: 3.2rem;
+  margin: 0 auto;
+}
+
+.attribution {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+.header {
+  border-bottom: 3px solid #f7f8fd;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav__toggle--open {
+  display: none;
+}
+
+.nav__toggle--close {
+  display: none;
+}
+
+.nav__logo {
+  margin-right: 4.8rem;
+}
+
+.nav__list {
+  gap: 3.2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #68707d;
+}
+
+.nav__list__item {
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+}
+
+.nav__list__item:hover {
+  color: #1d2025;
+  border-bottom: 3px solid #ff7d1a;
+}
+
+.user {
+  cursor: pointer;
+  gap: 3.2rem;
+}
+
+.user__image img {
+  width: 6.4rem;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  -webkit-transition: border-color .3s;
+  transition: border-color .3s;
+}
+
+.user__image img:hover {
+  border-color: #ff7d1a;
+}
+
+.user__icon {
+  position: relative;
+}
+
+.user__icon img {
+  width: 3.2rem;
+}
+
+.user__icon__number {
+  background-color: #ff7d1a;
+  color: white;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  position: absolute;
+  top: -1rem;
+  right: -0.5rem;
+}
+
+.product {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.product__images__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.product__images__list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* &--main {
+					grid-column: 1 / -1;
+					& img {
+						width: 100%;
+						height: auto;
+					}
+				} */
+}
+
+.product__images__list__item:nth-child(1) {
+  grid-column: 1 / -1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+.product__images__list__item:nth-child(2) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+}
+
+.product__images__list__item:nth-child(3) {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+}
+
+.product__images__list__item:nth-child(4) {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+}
+
+.product__images__list__item:nth-child(5) {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / 5;
+}
+
+.product__images__list__item:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.product__images__list__item img {
+  width: 100%;
+  border-radius: 1.4rem;
+  height: auto;
+}
+
+.product__images__list__item--selected {
+  border-radius: 1.6rem;
+  border: 2px solid #ff7d1a;
+}
+
+.product__informations {
+  padding: 6.4rem 6.4rem 4.8rem 9.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 3.6rem;
+}
+
+.product__informations__supplier {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ff7d1a;
+  font-weight: 700;
+}
+
+.product__informations__title {
+  font-size: 4.2rem;
+  font-weight: 700;
+}
+
+.product__informations__detail {
+  line-height: 1.4;
+  font-size: 1.6rem;
+  color: #68707d;
+}
+
+.product__informations__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2.4rem;
+}
+
+.product__informations__price__discount {
+  background-color: #ffede0;
+  color: #ff7d1a;
+  padding: 0.5rem 0.75rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.product__informations__price--active {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.product__informations__price--passive {
+  color: #68707d;
+  display: block;
+  font-size: 1.6rem;
+  text-decoration: line-through;
+}
+
+.product__informations__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.2rem;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+}
+
+.product__informations__buttons__quantity {
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 3.2rem;
+  background-color: #f7f8fd;
+  padding: 1.5rem 1.4rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
+          box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.product__informations__buttons__quantity button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product__informations__buttons__add-to-cart {
+  -webkit-box-shadow: 1rem 1rem 2rem rgba(255, 125, 26, 0.75);
+          box-shadow: 1rem 1rem 2rem rgba(255, 125, 26, 0.75);
+  border: none;
+  background: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.8rem;
+  justify-self: stretch;
+  padding: 1.5rem 5.6rem;
+  background-color: #ff7d1a;
+  color: white;
+  font-weight: 700;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.product__informations__buttons__add-to-cart img {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}

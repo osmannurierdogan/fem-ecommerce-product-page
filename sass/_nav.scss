@@ -1,0 +1,34 @@
+.nav{
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //padding-bottom: 3.2rem;
+  &__toggle{
+    &--open{
+      display: none;
+    }
+    &--close{
+      display: none;
+    }
+  }
+  &__logo{
+    margin-right: 4.8rem;
+  }
+  &__list{
+    gap: 3.2rem;
+    font-size: $font-size-paragraph;
+    font-weight: $font-weight-normal;
+    color: $color-neutral-dark-grayish-blue;
+    &__item{
+      cursor: pointer;
+      &:hover{
+        //padding-bottom: 3.2rem;
+        color: $color-neutral-very-vark-blue;
+        border-bottom:  3px solid $color-primary-orange;
+        //padding-bottom: 1rem;
+      }
+      padding-bottom: 0.5rem;
+    }
+  }
+}

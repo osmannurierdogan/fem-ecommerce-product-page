@@ -1,0 +1,32 @@
+.user{
+  cursor: pointer;
+  gap: 3.2rem;
+  &__image{
+    & img {
+      width: 6.4rem;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      transition: border-color .3s;
+      &:hover{
+        border-color: $color-primary-orange;
+      }
+    }
+  }
+  &__icon{
+    position: relative;
+    & img {
+      width: 3.2rem;
+    }
+    &__number{
+      background-color: $color-primary-orange;
+      color: $color-neutral-white;
+      font-weight: $font-weight-bold;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50%;
+      font-size: $font-size-paragraph;
+      position: absolute;
+      top: -1rem;
+      right: -0.5rem;
+    }
+  }
+}

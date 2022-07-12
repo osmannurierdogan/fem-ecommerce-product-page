@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Frontend Mentor | E-commerce product page</title>
+		<script src="https://unpkg.com/vue@3" defer></script>
+		<script src="./js/script.js" defer></script>
+	</head>
+	<body>
+		<header class="header">
+			<div class="container-fluid flex flex-between">
+				<nav class="nav">
+					<div class="nav__toggle">
+						<img
+							class="nav__toggle--open"
+							src="./images/icon-menu.svg"
+							alt="Mobile Navigation Open Icon"
+						/>
+						<img
+							class="nav__toggle--close"
+							src="./images/icon-close.svg"
+							alt="Mobile Navigation Close Icon"
+						/>
+					</div>
+					<div class="nav__logo">
+						<img src="./images/logo.svg" alt="Sneakers Logo" />
+					</div>
+					<ul class="nav__list flex flex-between">
+						<li class="nav__list__item">Collections</li>
+						<li class="nav__list__item">Men</li>
+						<li class="nav__list__item">Women</li>
+						<li class="nav__list__item">About</li>
+						<li class="nav__list__item">Contact</li>
+					</ul>
+				</nav>
+
+				<div class="user flex flex-between">
+					<div class="user__icon">
+						<img src="./images/icon-cart.svg" alt="user Icon" />
+						<!-- <span class="user__icon__number">{{ cartSize.length }}</span> -->
+						<span class="user__icon__number">3</span>
+					</div>
+					<div class="user__image">
+						<img src="./images/image-avatar.png" alt="User Image" />
+					</div>
+				</div>
+				<!-- <div class="cart">
+					<h3 class="cart__title">Cart</h3>
+					<div class="cart__box">
+						<div class="cart__item">
+							<div class="cart__item__image"></div>
+							<div class="cart__item__content"></div>
+						</div>
+						<button class="cart__checkout">Checkout</button>
+					</div>
+				</div> -->
+			</div>
+		</header>
+
+		<main>
+			<!-- <section class="product"></section> -->
+			<div class="container">
+				<div class="product" id="product">
+					<div class="product__images">
+						<ul class="product__images__list">
+							<li
+								class="product__images__list__item product__images__list__item--main"
+							>
+								<img
+									src="./images/image-product-1.jpg"
+									alt="Product Image Thumbnail"
+								/>
+							</li>
+							<li
+								class="product__images__list__item product__images__list__item--selected"
+							>
+								<img
+									src="./images/image-product-1-thumbnail.jpg"
+									alt="Product Image Thumbnail"
+								/>
+							</li>
+							<li class="product__images__list__item">
+								<img
+									src="./images/image-product-2-thumbnail.jpg"
+									alt="Product Image Thumbnail"
+								/>
+							</li>
+							<li class="product__images__list__item">
+								<img
+									src="./images/image-product-3-thumbnail.jpg"
+									alt="Product Image Thumbnail"
+								/>
+							</li>
+							<li class="product__images__list__item">
+								<img
+									src="./images/image-product-4-thumbnail.jpg"
+									alt="Product Image Thumbnail"
+								/>
+							</li>
+						</ul>
+					</div>
+
+					<div class="product__informations">
+						<h2 class="product__informations__supplier">{{ supplier }}</h2>
+						<h1 class="product__informations__title">{{ title }}</h1>
+						<p class="product__informations__detail">{{ detail }}</p>
+
+						<div class="product__informations__price">
+							<span class="product__informations__price--active"
+								>${{ newPrice }}.00</span
+							>
+							<span class="product__informations__price__discount"
+								>{{ discountRate }}%</span
+							>
+							<span class="product__informations__price--passive"
+								>${{ oldPrice }}.00</span
+							>
+						</div>
+
+						<div class="product__informations__buttons">
+							<!-- <input
+								type="number"
+								name="itemQuantity"
+								id="quantity"
+								value="0"
+							/> -->
+							<div class="product__informations__buttons__quantity">
+								<button @click="decreaseOrderQuantity">
+									<img
+										src="./images/icon-minus.svg"
+										alt="Decrease the quantity"
+									/>
+								</button>
+								<span>{{ orderQuantity }}</span>
+								<button @click="increaseOrderQuantity">
+									<img
+										src="./images/icon-plus.svg"
+										alt="Increase the quantity"
+									/>
+								</button>
+							</div>
+							<button class="product__informations__buttons__add-to-cart">
+								<img src="./images/icon-cart.svg" alt="Cart Icon" />
+								<span>Add to cart</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://linkedin.com/in/osmannurierdogan">Osman Nuri Erdogan</a>.
+  </div> -->
+	</body>
+</html>
+
