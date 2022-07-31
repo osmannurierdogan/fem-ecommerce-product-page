@@ -14,7 +14,6 @@
 		<link rel="stylesheet" href="./css/style.css" />
 		<title>Frontend Mentor | E-commerce product page</title>
 		<script src="https://unpkg.com/vue@3" defer></script>
-		<script src="./js/script.js" defer></script>
 	</head>
 	<body>
 		<header class="header">
@@ -48,14 +47,17 @@
 					<div class="user__icon">
 						<img src="./images/icon-cart.svg" alt="user Icon" />
 						<!-- <span class="user__icon__number">{{ cartSize.length }}</span> -->
+						<!-- <span class="user__icon__number">{{ orderQuantity }}</span> -->
 						<span class="user__icon__number">3</span>
 					</div>
 					<div class="user__image">
 						<img src="./images/image-avatar.png" alt="User Image" />
 					</div>
 				</div>
-				<!-- <div class="cart">
+
+				<!-- <div class="cart" id="cart-popup">
 					<h3 class="cart__title">Cart</h3>
+					<p >Your cart is empty. {{ basketSize.length }}</p>
 					<div class="cart__box">
 						<div class="cart__item">
 							<div class="cart__item__image"></div>
@@ -73,13 +75,8 @@
 				<div class="product" id="product">
 					<div class="product__images">
 						<ul class="product__images__list">
-							<li
-								class="product__images__list__item product__images__list__item--main"
-							>
-								<img
-									src="./images/image-product-1.jpg"
-									alt="Product Image Thumbnail"
-								/>
+							<!-- <li class="product__images__list__item">
+								<img :src="activeSrc" alt="Product Image Thumbnail" />
 							</li>
 							<li
 								class="product__images__list__item product__images__list__item--selected"
@@ -89,7 +86,9 @@
 									alt="Product Image Thumbnail"
 								/>
 							</li>
-							<li class="product__images__list__item">
+							<li
+								class="product__images__list__item product__images__list__item--main"
+							>
 								<img
 									src="./images/image-product-2-thumbnail.jpg"
 									alt="Product Image Thumbnail"
@@ -104,6 +103,34 @@
 							<li class="product__images__list__item">
 								<img
 									src="./images/image-product-4-thumbnail.jpg"
+									alt="Product Image Thumbnail"
+								/>
+							</li> -->
+							<li class="product__images__list__item product__images__list__item--main">
+								<img
+									:src="mainImageUrl"
+									alt="Product Image Thumbnail"
+								/>
+							</li>
+							
+							
+							<!-- <li
+								v-for="image in images"
+								:key="image.id"
+								class="product__images__list__item"
+							> -->
+							<li
+								v-for="image in images"
+								:key="image.id"
+								class="product__images__list__item"
+								@click="setMainImage(image.id)"
+							>
+							<!-- :class="{
+									'product__images__list__item--selected': id === activeImage
+								}" 
+								{{ image.id }}-->
+								<img
+									:src="createThumbnailImageUrl(image.id)"
 									alt="Product Image Thumbnail"
 								/>
 							</li>
@@ -141,7 +168,7 @@
 										alt="Decrease the quantity"
 									/>
 								</button>
-								<span>{{ orderQuantity }}</span>
+								<span v-model="basketSize">{{ orderQuantity }}</span>
 								<button @click="increaseOrderQuantity">
 									<img
 										src="./images/icon-plus.svg"
@@ -149,7 +176,7 @@
 									/>
 								</button>
 							</div>
-							<button class="product__informations__buttons__add-to-cart">
+							<button @click="addToCart(basketSize)" class="product__informations__buttons__add-to-cart">
 								<img src="./images/icon-cart.svg" alt="Cart Icon" />
 								<span>Add to cart</span>
 							</button>
@@ -163,6 +190,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://linkedin.com/in/osmannurierdogan">Osman Nuri Erdogan</a>.
   </div> -->
+		<script src="./js/script.js" defer></script>
 	</body>
 </html>
-

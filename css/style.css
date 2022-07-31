@@ -97,6 +97,28 @@ input[type="number"] {
 
 .header {
   border-bottom: 3px solid #f7f8fd;
+  position: relative;
+}
+
+.cart {
+  display: block;
+  position: absolute;
+  right: 10%;
+  bottom: -100%;
+  width: 20rem;
+  background-color: #ffede0;
+  padding: 2.4rem;
+}
+
+.cart__title {
+  font-size: 1.6rem;
+  border-bottom: #b6bcc8 2px solid;
+  padding-bottom: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+.display-cart-popup {
+  display: block;
 }
 
 .nav {
